@@ -1,0 +1,26 @@
+{
+    "name": "echarts-next",
+    "version": "1.0.0",
+    "description": "V2 ns-echarts 升级版",
+    "main": "index.js",
+    "author": "noxussj",
+    "license": "MIT",
+    "homepage": "",
+    "repository": "",
+    "keywords": [
+        "echarts",
+        "echarts5.0",
+        "javascript",
+        "vue",
+        "html",
+        "css",
+        "noxussj",
+        "图表",
+        "可视化",
+        "插件",
+        "二次封装",
+        "快速",
+        "开发",
+        "高效"
+    ]
+}
