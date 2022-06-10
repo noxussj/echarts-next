@@ -26,6 +26,10 @@ const props = defineProps({
                     name: '1月',
                     data: [120, 200, 150, 80, 70, 110, 130],
                 },
+                {
+                    name: '2月',
+                    data: [70, 110, 120, 200, 150, 80, 130],
+                },
             ],
             axis: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         }),
