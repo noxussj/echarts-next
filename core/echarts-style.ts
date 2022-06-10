@@ -155,6 +155,10 @@ const $xAxis = {
     },
     horizontal: {
         type: 'value',
+        axisLabel: {
+            color: $color.xAxisLabel,
+            fontSize: $fontSize.xAxisLabel,
+        },
         splitLine: {
             show: false,
         },
@@ -191,6 +195,10 @@ const $yAxis = {
         type: 'category',
         axisTick: {
             show: false,
+        },
+        axisLabel: {
+            color: $color.yAxisLabel,
+            fontSize: $fontSize.yAxisLabel,
         },
         axisLine: {
             show: false,
