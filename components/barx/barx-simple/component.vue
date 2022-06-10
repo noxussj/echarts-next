@@ -4,9 +4,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import _echarts from '../../../utils/echarts-register.js';
-import { extens } from '../../../core/echarts-extens.js';
-import { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis } from '../../../core/echarts-style.js';
+import render from './render.js';
 
 const props = defineProps({
     /**
@@ -17,7 +15,7 @@ const props = defineProps({
         default: () => ({
             series: [
                 {
-                    name: '',
+                    name: '1月',
                     data: [120, 200, 150, 80, 70, 110, 130],
                 },
             ],
@@ -29,8 +27,8 @@ const props = defineProps({
      * 柱状图颜色
      */
     barColor: {
-        type: Array,
-        default: () => $color.theme,
+        type: Array || null,
+        default: null,
     },
 
     /**
@@ -39,14 +37,6 @@ const props = defineProps({
     barWidth: {
         type: Number,
         default: 15,
-    },
-
-    /**
-     * 是否堆叠
-     */
-    stack: {
-        type: Boolean,
-        default: false,
     },
 
     /**
@@ -61,41 +51,6 @@ const props = defineProps({
 const dom = ref<null>(null);
 
 onMounted(() => {
-    const series = [];
-
-    props.data.series.forEach((item: any) => {
-        series.push({
-            type: 'bar',
-            name: item.name,
-            data: item.data,
-            barWidth: props.barWidth,
-            stack: props.stack,
-        });
-    });
-
-    /**
-     * 导出配置项
-     */
-    const options = {
-        color: props.barColor,
-        grid: $grid,
-        tooltip: Object.assign(
-            {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow',
-                },
-            },
-            $tooltip
-        ),
-        xAxis: Object.assign({ data: props.data.axis }, $xAxis),
-        yAxis: [Object.assign({}, $yAxis)],
-        series: series,
-    };
-
-    /**
-     * 继承配置项后渲染图表
-     */
-    _echarts.render(dom, extens(props.opt, options));
+    render({ $dom: dom, $opt: props.opt, $data: props.data, $barColor: props.barColor, $barWidth: props.barWidth });
 });
 </script>

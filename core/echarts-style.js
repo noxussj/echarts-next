@@ -28,6 +28,11 @@ const $color = {
     legendLabel: 'rgba(255, 255, 255, 1)',
 
     /**
+     * X轴分割线颜色
+     */
+    xSplitLine: 'rgba(255, 255, 255, 0.05)',
+
+    /**
      * X轴轴线颜色
      */
     xAxisLine: 'rgba(142, 245, 254, 0.15)',
@@ -36,6 +41,11 @@ const $color = {
      * X轴标签颜色
      */
     xAxisLabel: 'rgba(255, 255, 255, 1)',
+
+    /**
+     * Y轴分割线颜色
+     */
+    ySplitLine: 'rgba(255, 255, 255, 0.05)',
 
     /**
      * Y轴轴线颜色
@@ -111,11 +121,11 @@ const $fontSize = {
  * 提示框风格
  */
 const $tooltip = {
-    backgroundColor: 'rgba(3, 36, 96, 1)',
-    borderColor: 'rgba(0, 83, 255, 1)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    borderColor: 'rgba(255, 255, 255, 1)',
     borderWidth: 1,
     textStyle: {
-        color: 'rgba(12, 139, 255, 1)',
+        color: 'rgba(48, 49, 51, 1)',
     },
 };
 
@@ -137,7 +147,6 @@ const $xAxis = {
         },
     },
     splitLine: {
-        show: true,
         lineStyle: {
             color: $color.xSplitLine,
         },
@@ -158,13 +167,12 @@ const $yAxis = {
         fontSize: $fontSize.yAxisLabel,
     },
     axisLine: {
-        show: true,
+        show: false,
         lineStyle: {
             color: $color.yAxisLine,
         },
     },
     splitLine: {
-        show: true,
         lineStyle: {
             color: $color.ySplitLine,
         },
