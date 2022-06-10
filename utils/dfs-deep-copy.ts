@@ -1,8 +1,8 @@
 /**
  * 类型字典
  */
-export let type = (data) => {
-    let dist = {
+export const type = (data: string) => {
+    const dist: any = {
         '[object Array]': 'array',
         '[object Object]': 'object',
         '[object Number]': 'number',
@@ -12,5 +12,7 @@ export let type = (data) => {
         '[object Undefined]': 'undefined',
     };
 
-    return dist[Object.prototype.toString.call(data)];
+    const res = Object.prototype.toString.call(data);
+
+    return dist[res];
 };

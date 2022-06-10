@@ -1,9 +1,9 @@
-import { type } from './dfs-deep-copy.js';
+import { type } from './dfs-deep-copy';
 
 /**
  * 对象多层合并
  */
-let assign = (target = {}, sources = {}, filterKeys = []) => {
+let assign = (target: any = {}, sources: any = {}, filterKeys: any = []) => {
     let obj = target;
 
     /**

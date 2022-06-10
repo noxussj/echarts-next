@@ -1,17 +1,17 @@
-import _echarts from '../../../utils/echarts-register.js';
-import { extens } from '../../../core/echarts-extens.js';
-import { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis } from '../../../core/echarts-style.js';
+import _echarts from '../../../utils/echarts-register';
+import { extens } from '../../../core/echarts-extens';
+import { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis } from '../../../core/echarts-style';
 
-export default ({ $dom, $opt, $data, $barColor, $barWidth }) => {
-    const series = [];
 
-    $data.series.forEach((item) => {
+export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
+    const series: any = [];
+
+    $data.series.forEach((item: any) => {
         series.push({
             type: 'bar',
             name: item.name,
             data: item.data,
             barWidth: $barWidth,
-            stack: true,
         });
     });
 

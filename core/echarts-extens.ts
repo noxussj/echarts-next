@@ -1,10 +1,10 @@
 import _ from 'lodash-es';
-import assign from '../utils/object-assign.js';
+import assign from '../utils/object-assign';
 
 /**
  * 模式检测
  */
-function _modeCheck(FirstOBJ, SecondOBJ) {
+function _modeCheck(FirstOBJ: any, SecondOBJ: any) {
     if (FirstOBJ.baseOption && !SecondOBJ.baseOption) {
         console.error('提示', 'option两者格式不符合');
     }
@@ -25,7 +25,7 @@ function _modeCheck(FirstOBJ, SecondOBJ) {
 /**
  * 继承
  */
-function _extens(FirstOBJ, SecondOBJ) {
+function _extens(FirstOBJ: any, SecondOBJ: any) {
     let filterKeys = ['data', 'radius', 'center', 'color']; // 过滤keys
 
     let newOBJ = _.cloneDeep(SecondOBJ);
@@ -38,7 +38,7 @@ function _extens(FirstOBJ, SecondOBJ) {
 /**
  * 继承
  */
-const extens = (FirstOBJ, SecondOBJ) => {
+const extens = (FirstOBJ: any, SecondOBJ: any) => {
     _modeCheck(FirstOBJ, SecondOBJ);
 
     let option = _extens(FirstOBJ, SecondOBJ);

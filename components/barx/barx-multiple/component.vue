@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import render from './render.js';
+import render from './render';
 
 const props = defineProps({
     /**

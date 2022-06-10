@@ -4,7 +4,7 @@ class Echarts {
     /**
      * 渲染图表
      */
-    render(dom, opt) {
+    render(dom: any, opt: any) {
         const instance = echarts.init(dom.value);
 
         instance.setOption(opt);
