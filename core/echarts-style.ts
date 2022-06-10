@@ -133,22 +133,24 @@ const $tooltip = {
  * x 轴风格
  */
 const $xAxis = {
-    type: 'category',
-    axisTick: {
-        show: false,
-    },
-    axisLabel: {
-        color: $color.xAxisLabel,
-        fontSize: $fontSize.xAxisLabel,
-    },
-    axisLine: {
-        lineStyle: {
-            color: $color.xAxisLine,
+    vertical: {
+        type: 'category',
+        axisTick: {
+            show: false,
         },
-    },
-    splitLine: {
-        lineStyle: {
-            color: $color.xSplitLine,
+        axisLabel: {
+            color: $color.xAxisLabel,
+            fontSize: $fontSize.xAxisLabel,
+        },
+        axisLine: {
+            lineStyle: {
+                color: $color.xAxisLine,
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: $color.xSplitLine,
+            },
         },
     },
 };
@@ -157,24 +159,26 @@ const $xAxis = {
  * y 轴风格
  */
 const $yAxis = {
-    type: 'value',
-    nameTextStyle: {
-        color: $color.yAxisLabel,
-        fontSize: $fontSize.yAxisName,
-    },
-    axisLabel: {
-        color: $color.yAxisLabel,
-        fontSize: $fontSize.yAxisLabel,
-    },
-    axisLine: {
-        show: false,
-        lineStyle: {
-            color: $color.yAxisLine,
+    vertical: {
+        type: 'value',
+        nameTextStyle: {
+            color: $color.yAxisLabel,
+            fontSize: $fontSize.yAxisName,
         },
-    },
-    splitLine: {
-        lineStyle: {
-            color: $color.ySplitLine,
+        axisLabel: {
+            color: $color.yAxisLabel,
+            fontSize: $fontSize.yAxisLabel,
+        },
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: $color.yAxisLine,
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: $color.ySplitLine,
+            },
         },
     },
 };

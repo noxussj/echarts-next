@@ -42,8 +42,8 @@ export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
                 fontSize: $fontSize.legendLabel,
             },
         },
-        xAxis: Object.assign({ data: $data.axis }, $xAxis),
-        yAxis: [Object.assign({}, $yAxis)],
+        xAxis: Object.assign({ data: $data.axis }, $xAxis.vertical),
+        yAxis: [Object.assign({}, $yAxis.vertical)],
         series: series,
     };
 
