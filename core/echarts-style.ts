@@ -153,6 +153,12 @@ const $xAxis = {
             },
         },
     },
+    horizontal: {
+        type: 'value',
+        splitLine: {
+            show: false,
+        },
+    },
 };
 
 /**
@@ -181,6 +187,32 @@ const $yAxis = {
             },
         },
     },
+    horizontal: {
+        type: 'category',
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: false,
+        },
+    },
 };
 
-export { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis };
+/**
+ * 图例风格
+ */
+const $legend = {
+    show: true,
+    icon: 'rect',
+    top: 10,
+    right: 20,
+    itemWidth: 10,
+    itemHeight: 3,
+    itemGap: 15,
+    textStyle: {
+        color: '#fff',
+        fontSize: $fontSize.legendLabel,
+    },
+};
+
+export { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis, $legend };

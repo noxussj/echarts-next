@@ -1,6 +1,6 @@
 import _echarts from '../../../utils/echarts-register';
 import { extens } from '../../../core/echarts-extens';
-import { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis } from '../../../core/echarts-style';
+import { $color, $grid, $tooltip, $xAxis, $yAxis, $legend } from '../../../core/echarts-style';
 
 export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
     const series: any = [];
@@ -29,19 +29,7 @@ export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
             },
             $tooltip
         ),
-        legend: {
-            show: true,
-            icon: 'rect',
-            top: 10,
-            right: 20,
-            itemWidth: 10,
-            itemHeight: 3,
-            itemGap: 15,
-            textStyle: {
-                color: '#fff',
-                fontSize: $fontSize.legendLabel,
-            },
-        },
+        legend: Object.assign({}, $legend),
         xAxis: Object.assign({ data: $data.axis }, $xAxis.vertical),
         yAxis: [Object.assign({}, $yAxis.vertical)],
         series: series,

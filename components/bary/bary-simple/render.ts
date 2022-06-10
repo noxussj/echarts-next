@@ -11,7 +11,6 @@ export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
             name: item.name,
             data: item.data,
             barWidth: $barWidth,
-            stack: true,
         });
     });
 
@@ -31,8 +30,8 @@ export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
             $tooltip
         ),
         legend: Object.assign({}, $legend),
-        xAxis: Object.assign({ data: $data.axis }, $xAxis.vertical),
-        yAxis: [Object.assign({}, $yAxis.vertical)],
+        xAxis: Object.assign({}, $xAxis.horizontal),
+        yAxis: [Object.assign({ data: $data.axis }, $yAxis.horizontal)],
         series: series,
     };
 
