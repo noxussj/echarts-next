@@ -36,9 +36,9 @@ const props = defineProps({
     },
 
     /**
-     * 柱状图颜色
+     * 颜色
      */
-    barColor: {
+    color: {
         type: Array || null,
         default: null,
     },
@@ -55,6 +55,6 @@ const props = defineProps({
 const echarts = ref<null>(null);
 
 onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $barColor: props.barColor, $barWidth: props.barWidth });
+    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $barWidth: props.barWidth });
 });
 </script>

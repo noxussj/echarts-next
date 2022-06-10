@@ -2,7 +2,7 @@ import _echarts from '../../../utils/echarts-register';
 import { extens } from '../../../core/echarts-extens';
 import { $color, $grid, $tooltip, $xAxis, $yAxis, $legend } from '../../../core/echarts-style';
 
-export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
+export default ({ $dom, $opt, $data, $seriesColor, $barWidth }: any) => {
     const series: any = [];
 
     $data.series.forEach((item: any) => {
@@ -18,7 +18,7 @@ export default ({ $dom, $opt, $data, $barColor, $barWidth }: any) => {
      * 导出配置项
      */
     const options = {
-        color: $barColor || $color.theme,
+        color: $seriesColor || $color.theme,
         grid: $grid,
         tooltip: Object.assign(
             {

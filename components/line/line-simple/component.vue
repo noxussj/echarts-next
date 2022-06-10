@@ -26,10 +26,6 @@ const props = defineProps({
                     name: '1月',
                     data: [120, 200, 150, 80, 70, 110, 130],
                 },
-                {
-                    name: '2月',
-                    data: [70, 110, 120, 200, 150, 80, 130],
-                },
             ],
             axis: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         }),
@@ -44,17 +40,25 @@ const props = defineProps({
     },
 
     /**
-     * 柱状图宽度
+     * 曲线
      */
-    barWidth: {
-        type: Number,
-        default: 15,
+    smooth: {
+        type: Boolean,
+        default: false,
+    },
+
+    /**
+     * 区域渐变
+     */
+    areaGradient: {
+        type: Boolean,
+        default: false,
     },
 });
 
 const echarts = ref<null>(null);
 
 onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $barWidth: props.barWidth });
+    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $smooth: props.smooth, $areaGradient: props.areaGradient });
 });
 </script>
