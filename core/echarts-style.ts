@@ -1,4 +1,4 @@
-const $color = {
+let $color = {
     /**
      * 主题色-深色模式
      */
@@ -58,7 +58,7 @@ const $color = {
     yAxisLabel: 'rgba(255, 255, 255, 1)',
 };
 
-const $grid = {
+let $grid = {
     /**
      * 上
      */
@@ -85,7 +85,7 @@ const $grid = {
     containLabel: true,
 };
 
-const $fontSize = {
+let $fontSize = {
     /**
      * 标题/副标题
      */
@@ -120,7 +120,7 @@ const $fontSize = {
 /**
  * 提示框风格
  */
-const $tooltip = {
+let $tooltip = {
     backgroundColor: 'rgba(255, 255, 255, 1)',
     borderColor: 'rgba(255, 255, 255, 1)',
     borderWidth: 1,
@@ -132,7 +132,7 @@ const $tooltip = {
 /**
  * x 轴风格
  */
-const $xAxis = {
+let $xAxis = {
     vertical: {
         type: 'category',
         axisTick: {
@@ -168,7 +168,7 @@ const $xAxis = {
 /**
  * y 轴风格
  */
-const $yAxis = {
+let $yAxis = {
     vertical: {
         type: 'value',
         nameTextStyle: {
@@ -209,7 +209,7 @@ const $yAxis = {
 /**
  * 图例风格
  */
-const $legend = {
+let $legend = {
     show: true,
     icon: 'rect',
     top: 10,
@@ -223,4 +223,15 @@ const $legend = {
     },
 };
 
-export { $color, $grid, $fontSize, $tooltip, $xAxis, $yAxis, $legend };
+export const useStyle = () => {
+    return { $color, $grid, $tooltip, $xAxis, $yAxis, $legend };
+};
+
+export const loadStyle = (style: any) => {
+    $color = style.$color;
+    $grid = style.$grid;
+    $tooltip = style.$tooltip;
+    $xAxis = style.$xAxis;
+    $yAxis = style.$yAxis;
+    $legend = style.$legend;
+};

@@ -1,8 +1,10 @@
 import _echarts from '../../../utils/echarts-register';
 import { extens } from '../../../core/echarts-extens';
-import { $color, $grid, $tooltip, $xAxis, $yAxis, $legend } from '../../../core/echarts-style';
+import { useStyle } from '../../../core/echarts-style';
 
 export default ({ $dom, $opt, $data, $seriesColor, $barWidth }: any) => {
+    const { $color, $grid, $tooltip, $xAxis, $yAxis, $legend } = useStyle();
+
     const series: any = [];
 
     $data.series.forEach((item: any) => {
