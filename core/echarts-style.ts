@@ -152,6 +152,7 @@ let $xAxis = {
                 color: $color.xSplitLine,
             },
         },
+        boundaryGap: false,
     },
     horizontal: {
         type: 'value',

@@ -1,0 +1,48 @@
+.echarts-next__pie-simple {
+    position: relative;
+    height: 100%;
+
+    .pie-simple__legend {
+        position: absolute;
+        padding: 0 20px 20px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .legend__item {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+
+            .item-color1 {
+                position: relative;
+                width: 6px;
+                height: 6px;
+            }
+
+            .item-color2 {
+                position: absolute;
+                left: -3px;
+                top: -3px;
+                width: 12px;
+                height: 12px;
+                opacity: 0.12;
+            }
+
+            .item-name {
+                margin-left: 8px;
+            }
+
+            .item-percent {
+                margin-left: 10px;
+            }
+
+            .item-value {
+                margin-left: 10px;
+            }
+        }
+    }
+}
