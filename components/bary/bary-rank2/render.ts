@@ -44,6 +44,17 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
             name: item.name,
             data: data,
             barWidth: $barWidth,
+            label: {
+                show: true,
+                color: 'rgba(91, 225, 255, 0.6)',
+                offset: [-4, -12],
+                position: 'insideLeft',
+                formatter: (e: any) => {
+                    const findIndex = e.dataIndex;
+
+                    return `TOP${$data.axis.length - findIndex} ${e.name}`;
+                },
+            },
             itemStyle: {
                 borderRadius: 4,
             },
@@ -60,7 +71,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
             {
                 trigger: 'axis',
                 axisPointer: {
-                    type: 'shadow',
+                    type: 'line',
                 },
             },
             $tooltip
@@ -77,12 +88,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
                 ...$yAxis.horizontal,
                 data: $data.axis,
                 axisLabel: {
-                    color: 'rgba(91, 225, 255, 0.6)',
-                    formatter: (name: string) => {
-                        const findIndex = $data.axis.findIndex((x: string) => x === name);
-
-                        return `TOP${$data.axis.length - findIndex} ${name}`;
-                    },
+                    show: false,
                 },
             },
             {

@@ -88,7 +88,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
                     formatter: (name: string) => {
                         const findIndex = $data.axis.findIndex((x: string) => x === name);
 
-                        return $data.series[0].data[findIndex] + $data.series[0].unit;
+                        return String($data.series[0].data[findIndex]) + ($data.series[0].unit || '');
                     },
                 },
             },
