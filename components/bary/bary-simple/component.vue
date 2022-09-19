@@ -40,6 +40,14 @@ const props = defineProps({
     },
 
     /**
+     * 渐变
+     */
+    areaGradient: {
+        type: Array || null,
+        default: null,
+    },
+
+    /**
      * 柱状图宽度
      */
     barWidth: {
@@ -51,6 +59,6 @@ const props = defineProps({
 const echarts = ref<null>(null);
 
 onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $barWidth: props.barWidth });
+    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $areaGradient: props.areaGradient, $barWidth: props.barWidth });
 });
 </script>
