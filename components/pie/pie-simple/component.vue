@@ -2,7 +2,18 @@
     <div class="echarts-next__pie-simple">
         <div ref="echarts" style="height: 100%"></div>
 
-        <div class="pie-simple__legend">
+        <div class="pie-simple__legend" v-if="props.legend === 'bottom'">
+            <div class="legend__item" v-for="(item, index) in props.data" :key="index">
+                <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
+                    <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
+                </span>
+                <span class="item-name">{{ item.name }}</span>
+                <span class="item-percent">{{ ((item.value / count.value) * 100).toFixed(2) }}%</span>
+                <span class="item-value">{{ item.value }}{{ item.unit }}</span>
+            </div>
+        </div>
+
+        <div class="pie-simple__legend right" v-if="props.legend === 'right'">
             <div class="legend__item" v-for="(item, index) in props.data" :key="index">
                 <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
                     <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
@@ -55,7 +66,23 @@ const props = defineProps({
      */
     center: {
         type: Array,
-        default: null,
+        default: () => ['50%', '50%'],
+    },
+
+    /**
+     * 大小
+     */
+    radius: {
+        type: Array,
+        default: () => [60, 90],
+    },
+
+    /**
+     * 图例方向
+     */
+    legend: {
+        type: String,
+        default: 'bottom',
     },
 });
 
@@ -64,7 +91,7 @@ const count = props.data.reduce((a: any, b: any) => ({ value: Number(a.value) + 
 const echarts = ref<null>(null);
 
 onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $center: props.center });
+    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $center: props.center, $radius: props.radius });
 });
 </script>
 

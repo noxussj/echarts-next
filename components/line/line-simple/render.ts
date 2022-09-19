@@ -64,6 +64,5 @@ export default ({ $dom, $opt, $data, $seriesColor, $smooth, $areaGradient }: any
     /**
      * 继承配置项后渲染图表
      */
-    console.log(JSON.stringify(extens($opt, options)))
     _echarts.render($dom, extens($opt, options));
 };

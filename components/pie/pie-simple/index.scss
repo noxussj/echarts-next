@@ -45,4 +45,23 @@
             }
         }
     }
+
+    .pie-simple__legend.right {
+        right: 0;
+        top: 0;
+        left: unset;
+        bottom: unset;
+        width: auto;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        .legend__item {
+            margin-top: 0;
+        }
+
+        .legend__item + .legend__item {
+            margin-top: 30px;
+        }
+    }
 }

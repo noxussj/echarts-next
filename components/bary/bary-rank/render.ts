@@ -66,8 +66,38 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
             $tooltip
         ),
         legend: Object.assign({}, $legend),
-        xAxis: Object.assign({}, $xAxis.horizontal),
-        yAxis: [Object.assign({ data: $data.axis }, $yAxis.horizontal)],
+        xAxis: {
+            ...$xAxis.horizontal,
+            axisLabel: {
+                show: false,
+            },
+        },
+        yAxis: [
+            {
+                ...$yAxis.horizontal,
+                data: $data.axis,
+                axisLabel: {
+                    color: 'rgba(91, 225, 255, 0.6)',
+                    formatter: (name: string) => {
+                        const findIndex = $data.axis.findIndex((x: string) => x === name);
+
+                        return `TOP${$data.axis.length - findIndex} ${name}`;
+                    },
+                },
+            },
+            {
+                ...$yAxis.horizontal,
+                data: $data.axis,
+                axisLabel: {
+                    color: 'rgba(255, 225, 255, 1)',
+                    formatter: (name: string) => {
+                        const findIndex = $data.axis.findIndex((x: string) => x === name);
+
+                        return $data.series[0].data[findIndex];
+                    },
+                },
+            },
+        ],
         series: series,
     };
 

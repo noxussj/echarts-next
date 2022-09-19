@@ -2,7 +2,7 @@ import _echarts from '../../../utils/echarts-register';
 import { extens } from '../../../core/echarts-extens';
 import { useStyle } from '../../../core/echarts-style';
 
-export default ({ $dom, $opt, $data, $seriesColor, $center }: any) => {
+export default ({ $dom, $opt, $data, $seriesColor, $center, $radius }: any) => {
     const { $color, $tooltip } = useStyle();
 
     const legend: any = {
@@ -14,7 +14,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $center }: any) => {
             name: 'Access From',
             type: 'pie',
             center: $center,
-            radius: [60, 90],
+            radius: $radius,
             avoidLabelOverlap: false,
             label: {
                 show: false,
