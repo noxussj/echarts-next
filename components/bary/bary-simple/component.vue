@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import render from './render';
 
 const props = defineProps({
@@ -59,6 +59,15 @@ const props = defineProps({
 const echarts = ref<null>(null);
 
 onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $areaGradient: props.areaGradient, $barWidth: props.barWidth });
+    watch(
+        () => props.data,
+        () => {
+            render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $areaGradient: props.areaGradient, $barWidth: props.barWidth });
+        },
+        {
+            deep: true,
+            immediate: true,
+        }
+    );
 });
 </script>

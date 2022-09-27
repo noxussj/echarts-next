@@ -2,7 +2,7 @@
     <div class="echarts-next__pie-simple">
         <div ref="echarts" style="height: 100%"></div>
 
-        <div class="pie-simple__legend" v-if="props.legend === 'bottom'">
+        <div class="pie-simple__legend" v-if="props.legend === 'bottom' && count.value !== 0">
             <div class="legend__item" v-for="(item, index) in props.data" :key="index">
                 <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
                     <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="pie-simple__legend right" v-if="props.legend === 'right'">
+        <div class="pie-simple__legend right" v-if="props.legend === 'right' && count.value !== 0">
             <div class="legend__item" v-for="(item, index) in props.data" :key="index">
                 <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
                     <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch, nextTick } from 'vue';
 import render from './render';
 
 const props = defineProps({
@@ -86,13 +86,25 @@ const props = defineProps({
     },
 });
 
-const count = props.data.reduce((a: any, b: any) => ({ value: Number(a.value) + Number(b.value) }), { value: 0 });
+const count = ref(0);
 
 const echarts = ref<null>(null);
 
-onMounted(() => {
-    render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $center: props.center, $radius: props.radius });
-});
+setTimeout(() => {
+    watch(
+        () => props.data,
+        async () => {
+            if (props.data.length) {
+                count.value = props.data.reduce((a: any, b: any) => ({ value: Number(a.value) + Number(b.value) }), { value: 0 });
+                render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $center: props.center, $radius: props.radius });
+            }
+        },
+        {
+            deep: true,
+            immediate: true,
+        }
+    );
+}, 0);
 </script>
 
 <style lang="scss">

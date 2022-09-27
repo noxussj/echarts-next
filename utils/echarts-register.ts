@@ -7,6 +7,8 @@ class Echarts {
     render(dom: any, opt: any) {
         const instance = echarts.init(dom.value);
 
+        instance.clear();
+
         instance.setOption(opt);
 
         return instance;
