@@ -8,5 +8,7 @@
     "homepage": "",
     "repository": "",
     "keywords": [],
-    "dependencies": {}
+    "dependencies": {
+        "@types/echarts": "^4.9.16"
+    }
 }

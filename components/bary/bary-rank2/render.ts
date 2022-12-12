@@ -50,13 +50,11 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
                 offset: [-4, -16],
                 position: 'insideLeft',
                 formatter: (e: any) => {
-                    const findIndex = e.dataIndex;
-
-                    return `TOP${$data.axis.length - findIndex} ${e.name}`;
+                    return `${e.name}`;
                 },
             },
             itemStyle: {
-                borderRadius: 4,
+                borderRadius: 0,
             },
         });
     });
