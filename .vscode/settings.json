@@ -22,7 +22,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "eslint.validate": ["javascript", "vue"],
-    "vetur.validation.script": false
+    // "vetur.validation.script": false
     // "files.associations": {
     //     "*.vue": "html"
     // }

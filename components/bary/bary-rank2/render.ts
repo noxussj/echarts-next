@@ -47,7 +47,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
             label: {
                 show: true,
                 color: 'rgba(91, 225, 255, 0.6)',
-                offset: [-4, -12],
+                offset: [-4, -16],
                 position: 'insideLeft',
                 formatter: (e: any) => {
                     const findIndex = e.dataIndex;

@@ -10,5 +10,6 @@ import BaryMultiple from './components/bary/bary-multiple';
 import BaryStack from './components/bary/bary-stack';
 import LineSimple from './components/line/line-simple';
 import PieSimple from './components/pie/pie-simple';
+import RadarBlock from './components/radar/radar-block';
 
-export { loadStyle, _echarts, BarxSimple, BarxMultiple, BarxStack, BarySimple, BaryRank, BaryRank2, BaryMultiple, BaryStack, LineSimple, PieSimple };
+export { loadStyle, _echarts, BarxSimple, BarxMultiple, BarxStack, BarySimple, BaryRank, BaryRank2, BaryMultiple, BaryStack, LineSimple, PieSimple, RadarBlock };
