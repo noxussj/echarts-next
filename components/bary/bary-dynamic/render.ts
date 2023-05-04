@@ -35,6 +35,10 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
      */
     const options = {
         color: $seriesColor || $color.theme,
+        title: {
+            text: $data[0].date,
+            left: 12,
+        },
         grid: $grid,
         tooltip: Object.assign(
             {
@@ -92,7 +96,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
     let timer = 0;
 
     const run = () => {
-        if (index === axis.length) clearInterval(timer);
+        if (index === Object.keys(dates).length) clearInterval(timer);
 
         const keys: any = Object.keys(dates);
 
@@ -103,6 +107,9 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
         });
 
         ecahrts.setOption({
+            title: {
+                text: date,
+            },
             series: [
                 {
                     type: 'bar',
@@ -118,5 +125,5 @@ export default ({ $dom, $opt, $data, $seriesColor, $areaGradient, $barWidth }: a
 
     timer = setInterval(() => {
         run();
-    }, 3000);
+    }, 1000);
 };
