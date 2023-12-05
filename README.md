@@ -1,3 +1,9 @@
-# Introduce
+# 使用说明
 
--   demo
+## 本地发布包
+
+yarn link
+
+## 本地项目安装包
+
+yarn link echarts-next
