@@ -103,7 +103,7 @@ const props = defineProps({
      */
     legendDirect: {
         type: String,
-        default: 'right',
+        default: 'bottom',
     },
 });
 

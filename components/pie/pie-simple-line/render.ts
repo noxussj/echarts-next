@@ -34,11 +34,11 @@ export default ({ $dom, $opt, $data, $seriesColor, $center, $radius }: any) => {
                 borderRadius: 10,
             },
             label: {
-                show: false,
+                show: true,
                 color: '#fff',
             },
             labelLine: {
-                show: false,
+                show: true,
             },
             data: $data,
         },

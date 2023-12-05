@@ -20,6 +20,7 @@ export default ({ $dom, $opt, $data, $seriesColor, $smooth, $areaGradient }: any
                 ? {
                       areaStyle: {
                           show: false,
+                          opacity: 0.5,
                           color: {
                               type: 'linear',
                               x: 0,
