@@ -1,7 +1,7 @@
 {
     "name": "echarts-next",
-    "version": "2.0.2",
-    "description": "V2 ns-echarts 升级版",
+    "version": "3.0.0",
+    "description": "V3 ns-echarts 升级版",
     "main": "index.ts",
     "author": "noxussj",
     "license": "MIT",
