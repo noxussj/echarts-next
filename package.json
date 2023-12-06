@@ -1,6 +1,6 @@
 {
     "name": "echarts-next",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "V3 ns-echarts 升级版",
     "main": "index.ts",
     "author": "noxussj",

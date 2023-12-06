@@ -1,12 +1,17 @@
 .echarts-next__pie-simple {
     position: relative;
     height: 100%;
+    display: flex;
+    align-items: center;
+
+    > div {
+        width: 100%;
+    }
 
     .pie-simple__legend {
         position: absolute;
-        padding: 0 20px 20px;
-        right: 0;
-        bottom: 0;
+        right: 20px;
+        width: auto;
 
         .legend__item {
             padding-bottom: 7px;
@@ -36,14 +41,14 @@
             .item-name {
                 margin-left: 8px;
                 font-size: 13px;
-                color: #BBD3FB;
-                color: #BBD3FB;
+                color: #bbd3fb;
+                color: #bbd3fb;
             }
 
             .item-percent {
                 margin-left: 10px;
                 font-size: 13px;
-                color: #BBD3FB;
+                color: #bbd3fb;
             }
         }
     }
