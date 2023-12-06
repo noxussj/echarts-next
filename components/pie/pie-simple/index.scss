@@ -5,15 +5,16 @@
     .pie-simple__legend {
         position: absolute;
         padding: 0 20px 20px;
-        left: 0;
+        right: 0;
         bottom: 0;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
 
         .legend__item {
-            margin-top: 20px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid rgba(187, 211, 251, 0.2);
+        }
+
+        .legend__item {
+            margin-top: 7px;
             display: flex;
             align-items: center;
 
@@ -34,35 +35,16 @@
 
             .item-name {
                 margin-left: 8px;
+                font-size: 13px;
+                color: #BBD3FB;
+                color: #BBD3FB;
             }
 
             .item-percent {
                 margin-left: 10px;
+                font-size: 13px;
+                color: #BBD3FB;
             }
-
-            .item-value {
-                margin-left: 10px;
-            }
-        }
-    }
-
-    .pie-simple__legend.right {
-        padding-bottom: 0;
-        right: 0;
-        top: 0;
-        left: unset;
-        bottom: unset;
-        width: auto;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-
-        .legend__item {
-            margin-top: 0;
-        }
-
-        .legend__item + .legend__item {
-            margin-top: 10px;
         }
     }
 }

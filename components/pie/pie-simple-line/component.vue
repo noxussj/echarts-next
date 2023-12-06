@@ -1,34 +1,20 @@
 <template>
-    <div class="echarts-next__pie-simple-line">
+    <div class="echarts-next__pie-simple">
         <div ref="echarts" style="height: 100%"></div>
-
-        <div class="pie-simple__legend" v-if="props.legend && props.legendDirect === 'bottom' && count.value !== 0">
-            <div class="legend__item" v-for="(item, index) in props.data" :key="index">
-                <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
-                    <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
-                </span>
-                <span class="item-name">{{ item.name }}</span>
-                <span class="item-percent">{{ ((item.value / count.value) * 100).toFixed(2) }}%</span>
-                <!-- <span class="item-value">{{ item.value }}{{ item.unit }}</span> -->
-            </div>
-        </div>
-
-        <div class="pie-simple__legend right" v-if="props.legend && props.legendDirect === 'right' && count.value !== 0">
-            <div class="legend__item" v-for="(item, index) in props.data" :key="index">
-                <span class="item-color1" :style="{ backgroundColor: props.color[index] }">
-                    <span class="item-color2" :style="{ backgroundColor: props.color[index] }"></span>
-                </span>
-                <span class="item-name">{{ item.name }}</span>
-                <span class="item-percent">{{ ((item.value / count.value) * 100).toFixed(2) }}%</span>
-                <!-- <span class="item-value">{{ item.value }}{{ item.unit }}</span> -->
-            </div>
-        </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, watch, nextTick } from 'vue';
+import { ref, watch } from 'vue';
 import render from './render';
+
+import { PropType } from 'vue';
+
+interface Data {
+    name: string;
+    value: number;
+    unit: string;
+}
 
 const props = defineProps({
     /**
@@ -43,7 +29,7 @@ const props = defineProps({
      * 数据项
      */
     data: {
-        type: Array,
+        type: Array as PropType<Data[]>,
         default: () => [
             { value: 1048, name: 'Search Engine', unit: '次' },
             { value: 735, name: 'Direct', unit: '次' },
@@ -57,7 +43,7 @@ const props = defineProps({
      * 颜色
      */
     color: {
-        type: Array || null,
+        type: Array as PropType<string[]>,
         default: () => [
             'rgba(168, 39, 255, 1)',
             'rgba(130, 39, 255, 1)',
@@ -97,14 +83,6 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
-
-    /**
-     * 图例方向
-     */
-    legendDirect: {
-        type: String,
-        default: 'bottom',
-    },
 });
 
 const count = ref(0);
@@ -116,7 +94,8 @@ setTimeout(() => {
         () => props.data,
         async () => {
             if (props.data.length) {
-                count.value = props.data.reduce((a: any, b: any) => ({ value: Number(a.value) + Number(b.value) }), { value: 0 });
+                const obj: any = props.data.reduce((a: any, b: any) => ({ value: Number(a.value) + Number(b.value) }), { value: 0 });
+                count.value = obj.value;
                 render({ $dom: echarts, $opt: props.opt, $data: props.data, $seriesColor: props.color, $center: props.center, $radius: props.radius });
             }
         },
