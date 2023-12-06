@@ -5,20 +5,6 @@ import { useStyle } from '../../../core/echarts-style';
 export default ({ $dom, $opt, $data, $seriesColor, $center, $radius }: any) => {
     const { $color, $tooltip } = useStyle();
 
-    const title: any = {
-        show: true,
-        left: 'center',
-        top: '35%',
-        textStyle: {
-            color: '#fff',
-            fontSize: 14,
-        },
-        subtextStyle: {
-            color: '#fff',
-            fontSize: 12,
-        },
-    };
-
     const legend: any = {
         show: false,
     };
@@ -30,12 +16,32 @@ export default ({ $dom, $opt, $data, $seriesColor, $center, $radius }: any) => {
             center: $center,
             radius: $radius,
             avoidLabelOverlap: false,
-            itemStyle: {
-                borderRadius: 10,
-            },
             label: {
                 show: false,
+                position: 'center',
                 color: '#fff',
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '20',
+                    fontWeight: 'bold',
+                    formatter: (e: any) => {
+                        let res = `{name|${e.name}}`;
+
+                        res += `\n{value|${e.value}}`;
+
+                        return res;
+                    },
+                    rich: {
+                        name: {
+                            lineHeight: 30,
+                        },
+                        value: {
+                            lineHeight: 30,
+                        },
+                    },
+                },
             },
             labelLine: {
                 show: false,
@@ -48,7 +54,6 @@ export default ({ $dom, $opt, $data, $seriesColor, $center, $radius }: any) => {
      * 导出配置项
      */
     const options = {
-        title: title,
         color: $seriesColor || $color.theme,
         legend: legend,
         tooltip: Object.assign(

@@ -3,6 +3,7 @@ import _echarts from './utils/echarts-register';
 import BarxSimple from './components/barx/barx-simple';
 import BarxMultiple from './components/barx/barx-multiple';
 import BarxStack from './components/barx/barx-stack';
+import BarxPictorial from './components/barx/barx-pictorial';
 import BaryDynamic from './components/bary/bary-dynamic';
 import BarySimple from './components/bary/bary-simple';
 import BaryRank from './components/bary/bary-rank';
@@ -20,6 +21,7 @@ export {
     BarxSimple,
     BarxMultiple,
     BarxStack,
+    BarxPictorial,
     BaryDynamic,
     BarySimple,
     BaryRank,

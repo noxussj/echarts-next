@@ -1,5 +1,5 @@
 <template>
-    <div class="echarts-next__pie-simple">
+    <div class="echarts-next__pie-simple-line">
         <div ref="echarts" style="height: 100%"></div>
 
         <div class="pie-simple__legend" v-if="props.legend && props.legendDirect === 'bottom' && count.value !== 0">
@@ -9,7 +9,7 @@
                 </span>
                 <span class="item-name">{{ item.name }}</span>
                 <span class="item-percent">{{ ((item.value / count.value) * 100).toFixed(2) }}%</span>
-                <span class="item-value">{{ item.value }}{{ item.unit }}</span>
+                <!-- <span class="item-value">{{ item.value }}{{ item.unit }}</span> -->
             </div>
         </div>
 
@@ -20,7 +20,7 @@
                 </span>
                 <span class="item-name">{{ item.name }}</span>
                 <span class="item-percent">{{ ((item.value / count.value) * 100).toFixed(2) }}%</span>
-                <span class="item-value">{{ item.value }}{{ item.unit }}</span>
+                <!-- <span class="item-value">{{ item.value }}{{ item.unit }}</span> -->
             </div>
         </div>
     </div>
