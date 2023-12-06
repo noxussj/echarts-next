@@ -1,19 +1,19 @@
 import { loadStyle } from './core/echarts-style';
 import _echarts from './utils/echarts-register';
-import BarxSimple from './components/barx/barx-simple';
-import BarxMultiple from './components/barx/barx-multiple';
-import BarxStack from './components/barx/barx-stack';
-import BarxPictorial from './components/barx/barx-pictorial';
-import BaryDynamic from './components/bary/bary-dynamic';
-import BarySimple from './components/bary/bary-simple';
-import BaryRank from './components/bary/bary-rank';
-import BaryRank2 from './components/bary/bary-rank2';
-import BaryMultiple from './components/bary/bary-multiple';
-import BaryStack from './components/bary/bary-stack';
-import LineSimple from './components/line/line-simple';
-import PieSimple from './components/pie/pie-simple';
-import PieSimpleLine from './components/pie/pie-simple-line';
-import RadarBlock from './components/radar/radar-block';
+import BarxSimple from './components/barx/barx-simple/component.vue';
+import BarxMultiple from './components/barx/barx-multiple/component.vue';
+import BarxStack from './components/barx/barx-stack/component.vue';
+import BarxPictorial from './components/barx/barx-pictorial/component.vue';
+import BaryDynamic from './components/bary/bary-dynamic/component.vue';
+import BarySimple from './components/bary/bary-simple/component.vue';
+import BaryRank from './components/bary/bary-rank/component.vue';
+import BaryRank2 from './components/bary/bary-rank2/component.vue';
+import BaryMultiple from './components/bary/bary-multiple/component.vue';
+import BaryStack from './components/bary/bary-stack/component.vue';
+import LineSimple from './components/line/line-simple/component.vue';
+import PieSimple from './components/pie/pie-simple/component.vue';
+import PieSimpleLine from './components/pie/pie-simple-line/component.vue';
+import RadarBlock from './components/radar/radar-block/component.vue';
 
 export {
     loadStyle,
